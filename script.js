@@ -9,9 +9,6 @@ function getComputerChoice() {
     // through the computerChoices array which selects the computer's choice //
 }
 
-
-
-
 function playRound(playerSelection, computerSelection) {
     
     if (playerSelection === 'rock' && computerSelection === 'paper') {
@@ -32,13 +29,47 @@ function playRound(playerSelection, computerSelection) {
     return 'you win!!! c:';
 } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
     return 'it\'s a tie';
+} else {
+    return 'wait, what? please input either rock, paper or scissors c:';
 }
 
 }
 
-const playerSelection = prompt('please choose either rock, paper, or scissors').toLowerCase();
-const computerSelection = getComputerChoice();
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', rockChoice);
 
-console.log('you chose ' + playerSelection);
-console.log('the computer chose ' +computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', paperChoice);
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', scissorsChoice);
+   
+
+function rockChoice() {
+    const playerSelection = 'rock';
+    const computerSelection = getComputerChoice();
+    console.log('you chose ' + playerSelection);
+    console.log('the computer chose ' + computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+}
+
+function paperChoice() {
+    const playerSelection = 'paper';
+    const computerSelection = getComputerChoice();
+    console.log('you chose ' + playerSelection);
+    console.log('the computer chose ' + computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+}
+
+function scissorsChoice() {
+    const playerSelection = 'scissors';
+    const computerSelection = getComputerChoice();
+    console.log('you chose ' + playerSelection);
+    console.log('the computer chose ' + computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+}
+
+
+
+
+

@@ -9,6 +9,48 @@ function getComputerChoice() {
     // through the computerChoices array which selects the computer's choice //
 }
 
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', rockChoice);
+
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', paperChoice);
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', scissorsChoice);
+
+const results = document.querySelector(".results");
+
+function rockChoice() {
+    const playerSelection = 'rock';
+    const computerSelection = getComputerChoice();
+    results.removeChild(results.lastChild);
+    const textResults = document.createElement('p');
+    textResults.classList.add('text-results');
+    // add class style
+    textResults.textContent = playRound(playerSelection, computerSelection);
+    results.appendChild(textResults);
+}
+
+function paperChoice() {
+    const playerSelection = 'paper';
+    const computerSelection = getComputerChoice();
+    results.removeChild(results.lastChild);
+    const textResults = document.createElement('p');
+    textResults.classList.add('text-results');
+    textResults.textContent = playRound(playerSelection, computerSelection);
+    results.appendChild(textResults);
+}
+
+function scissorsChoice() {
+    const playerSelection = 'scissors';
+    const computerSelection = getComputerChoice();
+    results.removeChild(results.lastChild);
+    const textResults = document.createElement('p');
+    textResults.classList.add('text-results');
+    textResults.textContent = playRound(playerSelection, computerSelection);
+    results.appendChild(textResults);
+}
+
 function playRound(playerSelection, computerSelection) {
     
     if (playerSelection === 'rock' && computerSelection === 'paper') {
@@ -35,41 +77,11 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-const rock = document.querySelector('#rock');
-rock.addEventListener('click', rockChoice);
+const playerScore = document.querySelector('.player-score');
+const playerScoreValue = document.createElement('p');
+playerScore.appendChild(playerScoreValue);
 
-const paper = document.querySelector('#paper');
-paper.addEventListener('click', paperChoice);
-
-const scissors = document.querySelector('#scissors');
-scissors.addEventListener('click', scissorsChoice);
-   
-
-function rockChoice() {
-    const playerSelection = 'rock';
-    const computerSelection = getComputerChoice();
-    console.log('you chose ' + playerSelection);
-    console.log('the computer chose ' + computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
-}
-
-function paperChoice() {
-    const playerSelection = 'paper';
-    const computerSelection = getComputerChoice();
-    console.log('you chose ' + playerSelection);
-    console.log('the computer chose ' + computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
-}
-
-function scissorsChoice() {
-    const playerSelection = 'scissors';
-    const computerSelection = getComputerChoice();
-    console.log('you chose ' + playerSelection);
-    console.log('the computer chose ' + computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
-}
-
-
-
-
+const computerScore = document.querySelector('.computer-score');
+const computerScoreValue = document.createElement('p');
+computerScore.appendChild(computerScoreValue);
 

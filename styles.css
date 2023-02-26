@@ -1,0 +1,21 @@
+.results {
+    border: 3px black solid;
+    width: 75px;
+    padding: 50px;
+}
+
+.scores {
+    display: flex;
+}
+
+.player-score {
+    border: 1px black solid;
+    width: 10px;
+    padding: 10px;
+}
+
+.computer-score {
+    border: 1px black solid;
+    width: 10px;
+    padding: 10px;   
+}

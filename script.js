@@ -52,22 +52,43 @@ function scissorsChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    
-    if (playerSelection === 'rock' && computerSelection === 'paper') {
+
+    const playerScore = document.querySelector('.player-score');
+    const playerScoreValue = document.createElement('div');
+    playerScoreValue.classList.add('.player-score-value');
+
+    const computerScore = document.querySelector('.computer-score');
+    const computerScoreValue = document.createElement('div');
+    computerScoreValue.classList.add('.computer-score-value');
+
+    if (playerSelection === 'rock' && computerSelection === 'paper') {  
+    computerScoreValue.textContent = '.';
+    computerScore.appendChild(computerScoreValue);
     return 'you lose, idiot';
+
 } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+    playerScoreValue.textContent = '.';
+    playerScore.appendChild(playerScoreValue);
     return 'you win, good job!';
 } else if (playerSelection === 'rock' && computerSelection === 'rock') {
     return 'it\'s a tie';
 } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+    playerScoreValue.textContent = '.';
+    playerScore.appendChild(playerScoreValue);
     return 'you win!';
 } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+    computerScoreValue.textContent = '.';
+    computerScore.appendChild(computerScoreValue);
     return 'you lose :c';
 } else if (playerSelection === 'paper' && computerSelection === 'paper') {
     return 'it\'s a tie';
 } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+    computerScoreValue.textContent = '.';
+    computerScore.appendChild(computerScoreValue);
     return 'you lose, loser';
 } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+    playerScoreValue.textContent = '.';
+    playerScore.appendChild(playerScoreValue);
     return 'you win!!! c:';
 } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
     return 'it\'s a tie';
@@ -77,11 +98,4 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-const playerScore = document.querySelector('.player-score');
-const playerScoreValue = document.createElement('p');
-playerScore.appendChild(playerScoreValue);
-
-const computerScore = document.querySelector('.computer-score');
-const computerScoreValue = document.createElement('p');
-computerScore.appendChild(computerScoreValue);
 

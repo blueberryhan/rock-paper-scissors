@@ -11,15 +11,13 @@
 .player-score {
     border: 1px black solid;
     width: 10px;
-    padding: 10px;
+    padding: 15px;
+    display: flex;
 }
 
 .computer-score {
     border: 1px black solid;
     width: 10px;
-    padding: 10px;   
-}
-
-.player-score-value {
-    size: 5px;
+    padding: 15px;   
+    display: flex;
 }

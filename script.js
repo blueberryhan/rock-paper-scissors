@@ -1,12 +1,7 @@
 function getComputerChoice() {
     let computerChoices = ['rock','paper','scissors'];
-    // declaring the array i.e. the choices that the computer can make //
     let randomComputerChoice = Math.floor(Math.random() * computerChoices.length);
-    // a random number is generated based on the amount of choices available in the computerChoices array. //
-    // the number generated correlates to its respective string in the array //
     return computerChoices[randomComputerChoice];
-    // the randomly generated number is then passed //
-    // through the computerChoices array which selects the computer's choice //
 }
 
 const rock = document.querySelector('#rock');
@@ -51,6 +46,9 @@ function scissorsChoice() {
     results.appendChild(textResults);
 }
 
+let totalPlayerScore = 0;
+let totalComputerScore = 0;
+
 function playRound(playerSelection, computerSelection) {
 
     const playerScore = document.querySelector('.player-score');
@@ -64,38 +62,76 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock' && computerSelection === 'paper') {  
     computerScoreValue.textContent = '.';
     computerScore.appendChild(computerScoreValue);
+    totalComputerScore++;
+    console.log(totalComputerScore);
+    roundEnd();
     return 'you lose, idiot';
 
 } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
     playerScoreValue.textContent = '.';
     playerScore.appendChild(playerScoreValue);
+    totalPlayerScore++;
+    console.log(totalPlayerScore);
+    roundEnd();
     return 'you win, good job!';
+
 } else if (playerSelection === 'rock' && computerSelection === 'rock') {
     return 'it\'s a tie';
+
 } else if (playerSelection === 'paper' && computerSelection === 'rock') {
     playerScoreValue.textContent = '.';
     playerScore.appendChild(playerScoreValue);
+    totalPlayerScore++;
+    console.log(totalPlayerScore);
+    roundEnd();
     return 'you win!';
+
 } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
     computerScoreValue.textContent = '.';
     computerScore.appendChild(computerScoreValue);
+    totalComputerScore++;
+    console.log(totalComputerScore);
+    roundEnd();
     return 'you lose :c';
+
 } else if (playerSelection === 'paper' && computerSelection === 'paper') {
     return 'it\'s a tie';
 } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
     computerScoreValue.textContent = '.';
     computerScore.appendChild(computerScoreValue);
+    totalComputerScore++;
+    console.log(totalComputerScore);
+    roundEnd();
     return 'you lose, loser';
 } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
     playerScoreValue.textContent = '.';
     playerScore.appendChild(playerScoreValue);
+    totalPlayerScore++;
+    console.log(totalPlayerScore);
+    roundEnd();
     return 'you win!!! c:';
+
 } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
     return 'it\'s a tie';
+
 } else {
     return 'wait, what? please input either rock, paper or scissors c:';
 }
 
 }
 
+function roundEnd() {
+    if (totalPlayerScore === 5) {
+        alert('you won!');
+        rock.removeEventListener('click', rockChoice);
+        paper.removeEventListener('click', paperChoice);
+        scissors.removeEventListener('click', scissorsChoice);
+    } else if (totalComputerScore === 5) {
+        alert('the computer won!');
+        rock.removeEventListener('click', rockChoice);
+        paper.removeEventListener('click', paperChoice);
+        scissors.removeEventListener('click', scissorsChoice);
+    } 
+}
 
+roundEnd();

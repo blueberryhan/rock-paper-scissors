@@ -1,7 +1,14 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .results {
     border: 3px black solid;
-    width: 75px;
-    padding: 50px;
+    width: 150px;
+    padding: 10px;
+    margin: 0;
 }
 
 .scores {
@@ -10,14 +17,19 @@
 
 .player-score {
     border: 1px black solid;
-    width: 10px;
+    width: 50px;
     padding: 15px;
     display: flex;
 }
 
 .computer-score {
     border: 1px black solid;
-    width: 10px;
+    width: 50px;
     padding: 15px;   
     display: flex;
+}
+
+.text-results {
+    margin: 0;
+    padding: 0;
 }

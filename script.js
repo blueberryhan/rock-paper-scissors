@@ -52,67 +52,63 @@ let totalComputerScore = 0;
 function playRound(playerSelection, computerSelection) {
 
     const playerScore = document.querySelector('.player-score');
-    const playerScoreValue = document.createElement('div');
-    playerScoreValue.classList.add('.player-score-value');
 
     const computerScore = document.querySelector('.computer-score');
-    const computerScoreValue = document.createElement('div');
-    computerScoreValue.classList.add('.computer-score-value');
 
     if (playerSelection === 'rock' && computerSelection === 'paper') {  
-    computerScoreValue.textContent = '.';
-    computerScore.appendChild(computerScoreValue);
+    playerScore.removeChild(playerScore.lastElementChild);
     totalComputerScore++;
     console.log(totalComputerScore);
     roundEnd();
-    return 'you lose, idiot';
+    return `you lose. you chose rock and the computer chose paper. 
+    im very sorry. but just know that if this computer loses a set
+    amount of times, i will kill him. who am i? you dont need to know that.`;
 
 } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-    playerScoreValue.textContent = '.';
-    playerScore.appendChild(playerScoreValue);
+    computerScore.removeChild(computerScore.lastElementChild);
     totalPlayerScore++;
     console.log(totalPlayerScore);
     roundEnd();
-    return 'you win, good job!';
+    return `you win, good job! im proud of you. you chose rock, 
+    and the computer chose scissors. your huge, hard rock completely
+    pounded those flimsy scissors. now, the computer wont be coming home
+    to his children.`;
 
 } else if (playerSelection === 'rock' && computerSelection === 'rock') {
-    return 'it\'s a tie';
+    return 'it\'s a tie. you both chose rock.';
 
 } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-    playerScoreValue.textContent = '.';
-    playerScore.appendChild(playerScoreValue);
+    computerScore.removeChild(computerScore.lastElementChild);
     totalPlayerScore++;
     console.log(totalPlayerScore);
     roundEnd();
-    return 'you win!';
+    return `you win! you chose paper, and the computer chose rock. good job.`;
 
 } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-    computerScoreValue.textContent = '.';
-    computerScore.appendChild(computerScoreValue);
+    playerScore.removeChild(playerScore.lastElementChild);
     totalComputerScore++;
     console.log(totalComputerScore);
     roundEnd();
-    return 'you lose :c';
+    return `you lose :c you chose paper and the computer chose scissors. now,
+    youre going to have to send $52 to the following venmo account: @thegoatse`;
 
 } else if (playerSelection === 'paper' && computerSelection === 'paper') {
-    return 'it\'s a tie';
+    return 'it\'s a tie. you both chose paper.';
 } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-    computerScoreValue.textContent = '.';
-    computerScore.appendChild(computerScoreValue);
+    playerScore.removeChild(playerScore.lastElementChild);
     totalComputerScore++;
     console.log(totalComputerScore);
     roundEnd();
-    return 'you lose, loser';
+    return 'you lose. the computer chose rock and you chose scissors';
 } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-    playerScoreValue.textContent = '.';
-    playerScore.appendChild(playerScoreValue);
+    computerScore.removeChild(computerScore.lastElementChild);
     totalPlayerScore++;
     console.log(totalPlayerScore);
     roundEnd();
     return 'you win!!! c:';
 
 } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
-    return 'it\'s a tie';
+    return 'it\'s a tie. you both chose scissors.';
 
 } else {
     return 'wait, what? please input either rock, paper or scissors c:';

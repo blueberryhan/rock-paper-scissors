@@ -122,14 +122,27 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
+function gameOverWin() {
+
+    let gameOverWin = document.getElementById('game-over-win');
+    gameOverWin.style.display = 'block';
+}
+
+function gameOverLose() {
+
+    let gameOverLose = document.getElementById('game-over-lose');
+    gameOverLose.style.display = 'block';
+}
+
 function roundEnd() {
     if (totalPlayerScore === 5) {
-        alert('you won!');
+        gameOverWin();
         rock.removeEventListener('click', rockChoice);
         paper.removeEventListener('click', paperChoice);
         scissors.removeEventListener('click', scissorsChoice);
+
     } else if (totalComputerScore === 5) {
-        alert('the computer won!');
+        gameOverLose();
         rock.removeEventListener('click', rockChoice);
         paper.removeEventListener('click', paperChoice);
         scissors.removeEventListener('click', scissorsChoice);

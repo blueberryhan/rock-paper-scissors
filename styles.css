@@ -7,9 +7,10 @@ body {
 
 .results {
     border: 3px black solid;
-    width: 150px;
+    width: 600px;
+    height: 100px;
     padding: 10px;
-    margin: 0;
+    align-items: flex-end;
 }
 
 .scores {
@@ -46,4 +47,13 @@ body {
 
 .hp-heart {
     width: 12px;
+}
+
+button {
+    font-family: inherit;
+}
+
+.buttons {
+    margin-top: 300px;
+    margin-bottom: 50px;
 }

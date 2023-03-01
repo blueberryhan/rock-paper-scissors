@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: manaspc;
 }
 
 .results {
@@ -17,14 +18,14 @@ body {
 
 .player-score {
     border: 1px black solid;
-    width: 50px;
+    width: 200x;
     padding: 15px;
     display: flex;
 }
 
 .computer-score {
     border: 1px black solid;
-    width: 50px;
+    width: 200px;
     padding: 15px;   
     display: flex;
 }
@@ -32,4 +33,17 @@ body {
 .text-results {
     margin: 0;
     padding: 0;
+}
+
+@font-face {
+    font-family: manaspc;
+    src: url(manaspc.ttf);
+}
+
+.player-hp-icon, .computer-hp-icon {
+    margin-left: 15px;
+}
+
+.hp-heart {
+    width: 12px;
 }

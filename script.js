@@ -70,19 +70,20 @@ function playRound(playerSelection, computerSelection) {
     console.log(totalPlayerScore);
     roundEnd();
     return `you win, good job! im proud of you. you chose rock, 
-    and the computer chose scissors. your huge, hard rock completely
-    pounded those flimsy scissors. now, the computer wont be coming home
+    and the computer chose scissors. your huge, hard rock
+    pounded those flimsy scissors hard. now, the computer wont be coming home
     to his children.`;
 
 } else if (playerSelection === 'rock' && computerSelection === 'rock') {
-    return 'it\'s a tie. you both chose rock.';
+    return 'it\'s a tie. you both chose rock. ram ranch really rocks';
 
 } else if (playerSelection === 'paper' && computerSelection === 'rock') {
     computerScore.removeChild(computerScore.lastElementChild);
     totalPlayerScore++;
     console.log(totalPlayerScore);
     roundEnd();
-    return `you win! you chose paper, and the computer chose rock. good job.`;
+    return `you win! you chose paper, and the computer chose rock. the paper
+    was a copy of a zootopia fanfiction. it read the paper and gave up on life.`;
 
 } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
     playerScore.removeChild(playerScore.lastElementChild);
@@ -93,22 +94,27 @@ function playRound(playerSelection, computerSelection) {
     youre going to have to send $52 to the following venmo account: @thegoatse`;
 
 } else if (playerSelection === 'paper' && computerSelection === 'paper') {
-    return 'it\'s a tie. you both chose paper.';
+    return `it\'s a tie. you both chose paper. did you know that paper was
+    invented in lei-yang, china by tsai lun? if that is not correct im sorry.`;
+
 } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
     playerScore.removeChild(playerScore.lastElementChild);
     totalComputerScore++;
     console.log(totalComputerScore);
     roundEnd();
-    return 'you lose. the computer chose rock and you chose scissors';
+    return `you lose. the computer chose rock and you chose scissors. this is
+    disappointing, much like my programming abilities.`;
+
 } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
     computerScore.removeChild(computerScore.lastElementChild);
     totalPlayerScore++;
     console.log(totalPlayerScore);
     roundEnd();
-    return 'you win!!! c:';
+    return `you win!!! c: dont listen to the people who upset you. youre
+    worth something. everyone loves you. nobody hates you`;
 
 } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
-    return 'it\'s a tie. you both chose scissors.';
+    return `it\'s a tie. you both chose scissors. now, i will commit sudoku`;
 
 } else {
     return 'wait, what? please input either rock, paper or scissors c:';

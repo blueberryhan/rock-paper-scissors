@@ -51,7 +51,7 @@ body {
     margin-left: 15px;
 }
 
-.hp-heart {
+.player-heart, .computer-heart {
     width: 12px;
 }
 

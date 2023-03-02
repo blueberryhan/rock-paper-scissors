@@ -49,14 +49,16 @@ function scissorsChoice() {
 let totalPlayerScore = 0;
 let totalComputerScore = 0;
 
+
 function playRound(playerSelection, computerSelection) {
 
-    const playerScore = document.querySelector('.player-score');
+    let playerHeart = document.querySelector('.player-heart');
 
-    const computerScore = document.querySelector('.computer-score');
+    let computerHeart = document.querySelector('.computer-heart');
 
     if (playerSelection === 'rock' && computerSelection === 'paper') {  
-    playerScore.removeChild(playerScore.lastElementChild);
+
+    playerHeart.remove();
     totalComputerScore++;
     console.log(totalComputerScore);
     roundEnd();
@@ -65,7 +67,8 @@ function playRound(playerSelection, computerSelection) {
     amount of times, i will kill him. who am i? you dont need to know that.`;
 
 } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-    computerScore.removeChild(computerScore.lastElementChild);
+
+    computerHeart.remove();
     totalPlayerScore++;
     console.log(totalPlayerScore);
     roundEnd();
@@ -78,7 +81,8 @@ function playRound(playerSelection, computerSelection) {
     return 'it\'s a tie. you both chose rock. ram ranch really rocks';
 
 } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-    computerScore.removeChild(computerScore.lastElementChild);
+
+    computerHeart.remove();
     totalPlayerScore++;
     console.log(totalPlayerScore);
     roundEnd();
@@ -86,7 +90,8 @@ function playRound(playerSelection, computerSelection) {
     was a copy of a zootopia fanfiction. it read the paper and gave up on life.`;
 
 } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-    playerScore.removeChild(playerScore.lastElementChild);
+
+    playerHeart.remove();
     totalComputerScore++;
     console.log(totalComputerScore);
     roundEnd();
@@ -98,7 +103,8 @@ function playRound(playerSelection, computerSelection) {
     invented in lei-yang, china by tsai lun? if that is not correct im sorry.`;
 
 } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-    playerScore.removeChild(playerScore.lastElementChild);
+
+    playerHeart.remove();
     totalComputerScore++;
     console.log(totalComputerScore);
     roundEnd();
@@ -106,7 +112,8 @@ function playRound(playerSelection, computerSelection) {
     disappointing, much like my programming abilities.`;
 
 } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-    computerScore.removeChild(computerScore.lastElementChild);
+
+    computerHeart.remove();
     totalPlayerScore++;
     console.log(totalPlayerScore);
     roundEnd();
@@ -124,9 +131,7 @@ function playRound(playerSelection, computerSelection) {
 
 function gameOverWin() {
 
-    let screen = document.querySelector('body');
     let gameOverWin = document.getElementById('game-over-win');
-    screen.style.display = none;
     gameOverWin.style.display = 'block';
 }
 

@@ -124,7 +124,9 @@ function playRound(playerSelection, computerSelection) {
 
 function gameOverWin() {
 
+    let screen = document.querySelector('body');
     let gameOverWin = document.getElementById('game-over-win');
+    screen.style.display = none;
     gameOverWin.style.display = 'block';
 }
 
@@ -148,5 +150,4 @@ function roundEnd() {
         scissors.removeEventListener('click', scissorsChoice);
     } 
 }
-
 roundEnd();

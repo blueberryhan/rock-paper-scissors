@@ -18,17 +18,23 @@ body {
 }
 
 .player-score {
-    border: 1px black solid;
-    width: 200x;
-    padding: 15px;
+    border: none;
+    width: 200px;
+    padding-top: 50px;
     display: flex;
+    flex-direction: column;
+    margin-top: 120px;
+    margin-left: 300px;
 }
 
 .computer-score {
-    border: 1px black solid;
-    width: 200px;
+    border: none;
+    width: 500px;
     padding: 15px;   
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 200px;
 }
 
 .text-results {
@@ -54,6 +60,26 @@ button {
 }
 
 .buttons {
-    margin-top: 300px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-icon {
+    transform: scaleX(-1);
+    width: 200px;
+    margin: 0;
+}
+
+.robot-icon {
+    width: 200px;
+    height: 300px;
+    margin-top: 30px;
+}
+
+.player-hp {
+    display: flex;
+}
+
+.computer-hp {
+    display: flex;
 }
